@@ -9,7 +9,7 @@ export const getRecordById = async(req: Request, res: Response) => {
         res.status(201).json(response.data);
     }catch(error){
         console.error(error);
-        res.status(500).json({ error: 'Erro ao criar registro' });
+        res.status(500).json({ error: 'Erro ao buscar registro' });
     }
 }
 export const saveRecord = async(req: Request, res: Response) => {
