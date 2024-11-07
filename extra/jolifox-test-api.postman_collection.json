@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "f6c38d8a-2f2b-4101-af16-1a2d1fe8114e",
+		"name": "jolifox-test-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26187530",
+		"_collection_link": "https://cloudy-crater-225652.postman.co/workspace/Salusoftware~00d48bea-f4ad-4d23-b9ea-c167f7c12e96/collection/26187530-f6c38d8a-2f2b-4101-af16-1a2d1fe8114e?source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/jolifox/1370d303-ccf9-81a8-a5fb-f7612cdc0b93",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"jolifox",
+						"1370d303-ccf9-81a8-a5fb-f7612cdc0b93"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"company\": \"Company test 1\",\n    \"content\": \"content test 1\",\n    \"language\": \"Japanese\",\n    \"description\": \"Essa é a descrição\",\n    \"campaign\": \"Campaign\",\n    \"where\": \"Where ...\",\n    \"plannedDate\": \"2024-11-07\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/jolifox",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"jolifox"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/jolifox/1370d303-ccf9-81a8-a5fb-f7612cdc0b93",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"jolifox",
+						"1370d303-ccf9-81a8-a5fb-f7612cdc0b93"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"language\": \"English\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/jolifox/1370d303-ccf9-81a8-a5fb-f7612cdc0b93",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"jolifox",
+						"1370d303-ccf9-81a8-a5fb-f7612cdc0b93"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Restore record",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/jolifox/restore/1370d303-ccf9-81a8-a5fb-f7612cdc0b93",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"jolifox",
+						"restore",
+						"1370d303-ccf9-81a8-a5fb-f7612cdc0b93"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
