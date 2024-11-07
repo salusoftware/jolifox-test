@@ -45,3 +45,15 @@ export const updateRecord = async(req: Request, res: Response) => {
         res.status(500).json({ error: 'Houve um erro durante a tentativa de modificação do registro' });
     }
 }
+export const restoreRecord = async(req: Request, res: Response) => {
+    try{
+        const { id } = req.params;
+        const response = await AppService.changeRecord(id, {
+            archived: false
+        });
+        res.status(201).json(response.data);
+    }catch(error){
+        console.error(error);
+        res.status(500).json({ error: 'Houve um erro durante a tentativa de restauração do registro' });
+    }
+}
