@@ -6,6 +6,8 @@ export const getRecordById = async(id: string) => {
 }
 
 export const saveRecord = async(record: RecordType) => {
+    validateSave(record);
+
     const {
         company,
         content,
@@ -101,4 +103,17 @@ const getProperties = (data: RecordType) => {
     }
 
     return dataToUpdate;
+}
+
+const validateSave = (data: RecordType) => {
+    if(
+        !data.company ||
+        !data.campaign ||
+        !data.language ||
+        !data.where ||
+        !data.description ||
+        !data.plannedDate ||
+        !data.content){
+        throw new Error(`Verifique os dados informados!`)
+    }
 }

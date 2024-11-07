@@ -17,9 +17,9 @@ export const saveRecord = async(req: Request, res: Response) => {
         const data = req.body;
         const response = await AppService.saveRecord(data);
         res.status(201).json(response.data);
-    }catch(error){
+    }catch(error: any){
         console.error(error);
-        res.status(500).json({ error: 'Erro ao criar registro' });
+        res.status(500).json({ error: error?.message || 'Erro ao criar registro' });
     }
 }
 export const deleteRecord = async(req: Request, res: Response) => {
@@ -29,9 +29,9 @@ export const deleteRecord = async(req: Request, res: Response) => {
             archived: true,
         })
         res.status(201).json(response.data);
-    }catch(error){
+    }catch(error: any){
         console.error(error);
-        res.status(500).json({ error: 'Houve um erro durante a tentativa de exclusão do registro' });
+        res.status(500).json({ error: error?.message || 'Houve um erro durante a tentativa de exclusão do registro' });
     }
 }
 export const updateRecord = async(req: Request, res: Response) => {
@@ -40,9 +40,9 @@ export const updateRecord = async(req: Request, res: Response) => {
         const data: RecordType = req.body;
         const response = await AppService.updateRecord(id, data);
         res.status(201).json(response.data);
-    }catch(error){
+    }catch(error: any){
         console.error(error);
-        res.status(500).json({ error: 'Houve um erro durante a tentativa de modificação do registro' });
+        res.status(500).json({ error: error?.message || 'Houve um erro durante a tentativa de modificação do registro' });
     }
 }
 export const restoreRecord = async(req: Request, res: Response) => {
@@ -52,8 +52,8 @@ export const restoreRecord = async(req: Request, res: Response) => {
             archived: false
         });
         res.status(201).json(response.data);
-    }catch(error){
+    }catch(error: any){
         console.error(error);
-        res.status(500).json({ error: 'Houve um erro durante a tentativa de restauração do registro' });
+        res.status(500).json({ error: error?.message ||  'Houve um erro durante a tentativa de restauração do registro' });
     }
 }
