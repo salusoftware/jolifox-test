@@ -1,6 +1,5 @@
 import axios from "axios";
 
-console.log({'token: ':  process.env.NOTION_TOKEN})
 const notionApi = axios.create({
     baseURL: "https://api.notion.com/v1",
     headers: {
